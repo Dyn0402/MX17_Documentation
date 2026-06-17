@@ -335,6 +335,22 @@ bullets(s, [
 ], Inches(7.6), Inches(1.7), Inches(5.5), Inches(5.2), size=14.5)
 footer(s, "May")
 
+# May: a fully reconstructed beam event (µ-TPC) — the headline visualisation
+s = add_slide(); title_box(s, "What a reconstructed beam event looks like", kicker="May · µ-TPC reconstruction")
+fit_image(s, A("event_3d_geo.png"), Inches(0.3), Inches(1.45), Inches(7.9), Inches(5.7),
+          caption="Run 51, He/Ethane, MX17-3 (16 mm drift). Event 100 — reconstructed 3-D track through the May geometry.")
+bullets(s, [
+    ("A real beam event in MX17-3, fully reconstructed in µ-TPC mode:", 0, NAVY, True),
+    ("strip hits + drift time give the 3rd coordinate → a 3-D track.", 1),
+    ("7 X-strip and 9 Y-strip hits define the green track; it crosses the", 0),
+    ("Micromegas, passes the carbon target region and continues into the", 1),
+    ("SiPM wall and scintillator behind.", 1),
+    ("This is exactly the per-event reconstruction the X17 search needs —", 0, GREEN, True),
+    ("the angle between an e⁺e⁻ pair would be measured this way.", 1, GREEN, False),
+    ("The clean topology is what the thermal-region measurement relies on.", 0, NAVY, True),
+], Inches(8.4), Inches(1.7), Inches(4.7), Inches(5.0), size=14)
+footer(s, "May")
+
 # May: DREAM 4096 bug
 s = add_slide(); title_box(s, "Found & fixed: the DREAM “4096” lock-up", kicker="May · DAQ")
 bullets(s, [
@@ -475,6 +491,20 @@ img_slide("Sr-90 beta spectrum (source test)", "Backup · May",
 img_slide("EAR2 setup photograph", "Backup · Setup",
           "fig_setup_photo.png",
           caption="The MX17 detector and DREAM rack installed in EAR2.")
+
+# Backup: event_100 displays — the same reconstructed beam event, several views
+img_slide("Event display — Micromegas strip hits (3-D)", "Backup · Event display",
+          "event_3d_mm.png",
+          caption="Run 51, Event 100. FEU 1 X-strips (7 hits) and FEU 2 Y-strips (9 hits) placed in 3-D from strip position and drift time (v_drift = 0.0320 mm/ns, 16 mm gap); green = fitted µ-TPC track.")
+img_slide("Event display — hit-vs-drift fits & raw waveforms", "Backup · Event display",
+          "event_2d.png",
+          caption="Same event. Top: X and Y hit position vs drift time (the µ-TPC slope = track angle). Bottom: reconstructed track position and the raw X/Y strip waveforms feeding it.")
+img_slide("Event display — X–Y detector-plane projection", "Backup · Event display",
+          "event_xy.png",
+          caption="Same event projected onto the detector plane: X-strip and Y-strip hits, the MM active area, SiPM and large scintillators, capsule, and the track crossing points at each plane.")
+img_slide("Event display — cinematic render", "Backup · Event display",
+          "event_cinematic.png",
+          caption="3-D render of the reconstructed track passing through the resistive Micromegas (detector_geo_100). A rotating animation is available as event_100_3d_geo_rotating.gif.")
 
 # Backup: February gas/sample table
 s = add_slide(); title_box(s, "February — gases & samples tested", kicker="Backup · February")
